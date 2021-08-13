@@ -1,0 +1,26 @@
+.headerContainer {
+  height: 5rem;
+  border-bottom: 1px solid #0F0F0F;
+}
+
+.headerContent {
+  max-width: 1280px;
+  height: 5rem;
+  margin: 0 auto;
+  padding: 0 2rem;
+
+  display: flex;
+  align-items: center;
+
+  nav {
+    margin-left: auto;
+
+    a {
+      margin-left: 2rem;
+
+      &:hover {
+        color: #ffffff;
+      }
+    }
+  }
+}
