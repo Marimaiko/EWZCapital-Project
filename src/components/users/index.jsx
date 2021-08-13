@@ -1,6 +1,5 @@
 import { useContext } from "react";
 import { UsersContext } from "../../context/UsersContext";
-// import { api } from "../../services/api";
 import { UsersCard } from "../usersCard";
 
 import style from './style.module.scss';

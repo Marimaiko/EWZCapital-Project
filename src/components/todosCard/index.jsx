@@ -13,9 +13,7 @@ export function TodosCard(props) {
       RespName.push(name.name)
     )
   })
-
-  console.log()
-
+  
   return (
     <div className={style.TodosCardContainer}>
 
@@ -26,7 +24,7 @@ export function TodosCard(props) {
     )}
 
       <p>Título: {title}</p>
-      <p>Responsável: {RespName[{userId}]}</p>
+      <p>Responsável: {RespName[userId-1]}</p>
     </div>
   )
 }
