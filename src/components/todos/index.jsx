@@ -6,11 +6,11 @@ import style from './style.module.scss';
 
 export function Todos(props) {
   const [ todosData, setTodosData ] = useState([])
-  // const [ userId, setUserId ] = useState([])
-
 
   useEffect (() => {
-    api.get('todos')
+    api.get('todos', {
+      params: {_limit: 15}
+    })
       .then((response) => {
         setTodosData(response.data)
       })
@@ -18,16 +18,6 @@ export function Todos(props) {
         console.log('erro')
       })
   }, [])
-
-  // useEffect (() => {
-  //   api.get('users')
-  //     .then((response) => {
-  //       setUserId(response.data)
-  //     })
-  //     .catch(() => {
-  //       console.log('erro')
-  //     })
-  // }, [])
 
   return (
     <>
@@ -46,15 +36,6 @@ export function Todos(props) {
            </div>
         )
       })}
-
-      {/* {userId.map((user, key) => {
-        return(
-          <TodosCard 
-            key={user.id}
-            userId={user.name}
-          />
-        )
-      })} */}
     </>
   )
 }

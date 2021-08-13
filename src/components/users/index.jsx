@@ -1,28 +1,18 @@
-import { useState, useEffect } from "react";
-import { api } from "../../services/api";
+import { useContext } from "react";
+import { UsersContext } from "../../context/UsersContext";
+// import { api } from "../../services/api";
 import { UsersCard } from "../usersCard";
 
 import style from './style.module.scss';
 
 export function Users(props) {
-  const [ usersData, setUsersData ] = useState([])
-
-  useEffect(() => {
-    api.get('users')
-      .then((response) => {
-        setUsersData(response.data)
-
-      })
-      .catch(() => {
-        console.log('erro')
-      })
-  }, [])
+  const UsersData = useContext(UsersContext)
 
   return (
     <>
     <h2 className={style.UsersTitle}>Usuários</h2>
 
-    {usersData.map((user, key) => {
+    {UsersData.map((user, key) => {
       return (
         <div className={style.UsersCard}>
           <UsersCard 
